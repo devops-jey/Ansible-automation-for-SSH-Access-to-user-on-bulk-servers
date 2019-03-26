@@ -1,0 +1,10 @@
+# tasks file for ssh-access
+---
+
+- name: Add User
+  import_tasks: user_ssh_grant.yml
+  when: action == "grant"
+
+- name: Remove User
+  import_tasks: user_ssh_revoke.yml
+  when: action == "revoke"
